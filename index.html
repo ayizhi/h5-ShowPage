@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <title>index</title>
+</head>
+<body>
+
+<div class = 'titleLogo'><img src="./img/index/visa.png" alt=""/></div>
+<div location = 'shopping' class = 'middleBox'></div>
+<div class = 'bottomBoxs'>
+    <ul>
+        <li location = 'airline'><img src="./img/index/jingxuanhangkong.png" alt=""/></li>
+        <li location = 'hotel'><img src="./img/index/huanqiujiudian.png" alt=""/></li>
+        <li location = 'travel'><img src="./img/index/zunguilvxing.png" alt=""/></li>
+        <li location = 'eating'><img src="./img/index/jingzhicanyin.png" alt=""/></li>
+        <li location = 'education'><img src="./img/index/qinzijiaoyu.png" alt=""/></li>
+        <li location = 'healthy'><img src="./img/index/jiankangyangsheng.png" alt=""/></li>
+    </ul>
+</div>
+
+<!--<script src = './js/lib/zepto.js'></script>-->
+<script>
+    var lis = document.getElementsByTagName('li');
+    var divs = document.getElementsByTagName('div');
+
+    for(var i= 0,len = lis.length;i<len;i++){
+        lis[i].location = lis[i].getAttribute('location');
+        lis[i].onclick = function(){
+            window.location.href = './html/' + this.location + '.html'
+        }
+    }
+    for(var i= 0,len=divs.length;i<len;i++){
+        if(divs[i].className.indexOf('middleBox') != -1){
+            divs[i].location = divs[i].getAttribute('location');
+            divs[i].onclick = function(){
+                window.location.href = './html/' + this.location + '.html'
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
